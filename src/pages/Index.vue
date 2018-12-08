@@ -11,6 +11,8 @@
         <p>Make your list</p>
       </div>
       <div class="items-center justify-between column">
+        <q-btn to="signup" rounded label="sign up" color="secondary"/>
+        <br/>
         <q-btn to="groupname" class="create-btn" rounded color="red" label="Create Group" icon-right="create"/>
         <br/>
         <q-btn rounded label="Join Group" icon-right="card_giftcard"/>

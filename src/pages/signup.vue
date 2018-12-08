@@ -2,16 +2,15 @@
   <q-page class="flex flex-start justify-center">
     <div class="column welcome-wrapper flex justify-around">
       <div class="text-wrapper welcome-banner justify-center content-center items-center">
-        <p class="text-weight-bolder header-text self-center">Give your</p>
+        <p class="text-weight-bolder header-text self-center">Sign up</p>
         <br/>
-        <p class="text-weight-bolder header-text self-center">Group a name</p>
-        <q-input v-model="groupName" float-label="Group name" placeholder="Katie's Wishlist" />
+        <q-input v-model="email" float-label="Email address" placeholder="katie@gmail.com" />
+        <q-input v-model="password" type="password" float-label="Password" />
       </div>
       <div class="btn-container column justify-between">
-        <q-btn to="/" class="create-btn" rounded color="red" label="Back"/>
+        <q-btn class="" rounded color="secondary" label="Sign up"/>
         <br/>
-        <q-btn to="invitefriends" class="create-btn" rounded color="secondary" label="Next"/>
-        <br/>
+        <q-btn to="/" class="" rounded color="red" label="Home"/>
       </div>
     </div>
   </q-page>
@@ -35,12 +34,13 @@
 
 <script>
 export default {
-  name: 'groupname',
+  name: 'signup',
   methods: {
   },
   data () {
     return {
-      groupName: ''
+      email: '',
+      password: ''
     }
   }
 }

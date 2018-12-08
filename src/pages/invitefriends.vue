@@ -2,15 +2,14 @@
   <q-page class="flex flex-start justify-center">
     <div class="column welcome-wrapper flex justify-around">
       <div class="text-wrapper welcome-banner justify-center content-center items-center">
-        <p class="text-weight-bolder header-text self-center">Give your</p>
-        <br/>
-        <p class="text-weight-bolder header-text self-center">Group a name</p>
-        <q-input v-model="groupName" float-label="Group name" placeholder="Katie's Wishlist" />
+        <p class="text-weight-bolder header-text self-center">Invite friends</p>
+        <p class="text-weight-bolder header-text self-center">TBD</p>
+        <p class="text-weight-bolder header-text self-center">Friend stuff</p>
       </div>
       <div class="btn-container column justify-between">
-        <q-btn to="/" class="create-btn" rounded color="red" label="Back"/>
+        <q-btn to="/" class="create-btn" rounded color="red" label="Home"/>
         <br/>
-        <q-btn to="invitefriends" class="create-btn" rounded color="secondary" label="Next"/>
+        <q-btn class="create-btn" rounded color="secondary" label="Next"/>
         <br/>
       </div>
     </div>
@@ -35,12 +34,12 @@
 
 <script>
 export default {
-  name: 'groupname',
+  name: 'invitefriends',
   methods: {
   },
   data () {
     return {
-      groupName: ''
+    //   groupName: ''
     }
   }
 }
