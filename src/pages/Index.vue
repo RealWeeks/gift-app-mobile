@@ -11,7 +11,7 @@
         <p>Make your list</p>
       </div>
       <div class="items-center justify-between column">
-        <q-btn class="create-btn" rounded color="red" label="Create Group" icon-right="create"/>
+        <q-btn to="groupname" class="create-btn" rounded color="red" label="Create Group" icon-right="create"/>
         <br/>
         <q-btn rounded label="Join Group" icon-right="card_giftcard"/>
       </div>
@@ -30,9 +30,6 @@
 .header-text{
   font-size: 2.5em;
 }
-/* .create-btn{
-  margin-bottom: 10%;
-} */
 </style>
 
 <script>
