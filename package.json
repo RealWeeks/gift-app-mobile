@@ -13,7 +13,8 @@
     "mobile": "quasar dev -m electron"
   },
   "dependencies": {
-    "axios": "^0.18.0"
+    "axios": "^0.18.0",
+    "vue-axios": "^2.1.4"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",
