@@ -1,6 +1,6 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-layout-header>
+    <!-- <q-layout-header>
       <q-toolbar
         color="red"
         :glossy="$q.theme === 'mat'"
@@ -18,12 +18,12 @@
 
         <q-toolbar-title>
           Gift App
-          <!-- <div slot="subtitle">Running on Quasar v{{ $q.version }}</div> -->
+          <div slot="subtitle">Running on Quasar v{{ $q.version }}</div>
         </q-toolbar-title>
       </q-toolbar>
-    </q-layout-header>
+    </q-layout-header> -->
 
-    <q-layout-drawer
+    <!-- <q-layout-drawer
       v-model="leftDrawerOpen"
       :content-class="$q.theme === 'mat' ? 'bg-grey-2' : null"
     >
@@ -54,7 +54,7 @@
           <q-item-main label="Twitter" sublabel="@quasarframework" />
         </q-item>
       </q-list>
-    </q-layout-drawer>
+    </q-layout-drawer> -->
 
     <q-page-container>
       <router-view />
