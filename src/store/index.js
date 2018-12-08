@@ -14,9 +14,7 @@ const store = new Vuex.Store({
   },
   mutations: {
     SET_EMAIL (state, data) {
-      // debugger
       state.email = data
-      // this.$q.notify({message: 'Si', type: 'negative', position: 'top'})
     },
     SET_PASSWORD (state, data) {
       state.password = data
@@ -36,7 +34,6 @@ const store = new Vuex.Store({
       axios.post(`http://localhost:3000/signup?email=${data.email}&password=${data.password}`)
         .then((response) => {
           if (response.status === 200) {
-            debugger
             commit('SET_EMAIL', response.data.user.email)
             commit('SET_PASSWORD', response.data.user.password)
             commit('SET_ID', response.data.user._id)

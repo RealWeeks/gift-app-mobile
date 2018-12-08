@@ -48,17 +48,21 @@ export default {
   },
   computed: {
     useremail () {
-      debugger
-      if (this.$store.state.email) {
-        return this.$store.state.email
-      }
+      return this.$store.state.email
+    },
+    token () {
+      return this.$store.state.token
     }
   },
   watch: {
     useremail () {
-      debugger
       let data = { email: this.email, password: this.password }
       this.$store.dispatch('SIGN_IN', data)
+    },
+    token () {
+      if (this.token) {
+        this.$q.notify({message: 'Signed in', type: 'positive', position: 'top'})
+      }
     }
   },
   data () {
