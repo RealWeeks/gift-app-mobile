@@ -41,7 +41,7 @@ export default {
     handleCreateGroup () {
       this.$store.dispatch('CREATE_GROUP', {groupname: this.groupName})
         .then(() => {
-          this.$q.notify({message: 'Signed in', type: 'positive', position: 'top'})
+          this.$q.notify({message: 'Group greated', type: 'positive', position: 'top'})
           this.$router.push('groupsplash')
         })
         .catch(() => {

@@ -10,7 +10,9 @@ const store = new Vuex.Store({
     email: '',
     password: '',
     message: '',
-    token: ''
+    token: '',
+    groups: [],
+    id: ''
   },
   mutations: {
     SET_EMAIL (state, data) {
@@ -20,14 +22,17 @@ const store = new Vuex.Store({
       state.password = data
     },
     SET_ID (state, data) {
-      state.password = data
+      state.id = data
     },
     SET_MESSAGE (state, data) {
-      state.password = data
+      state.message = data
     },
     SET_TOKEN (state, data) {
       state.token = data
     }
+    // SET_STATUS (state, data) {
+    //   state.token = data
+    // }
   },
   actions: {
     SIGN_UP ({ commit }, data) {
@@ -83,7 +88,24 @@ const store = new Vuex.Store({
       }})
         .then((response) => {
           if (response.status === 200) {
+            commit('SET_MESSAGE', response.data.status)
+          } else {
+            // handle error
+          }
+        })
+        .catch((err) => {
+          debugger
+          console.log(err)
+        })
+    },
+    GET_GROUPS ({ commit }, data) {
+      axios.get(`http://localhost:3000/user/groups`, {headers: {
+        'Authorization': `bearer ${this.state.token}`
+      }})
+        .then((response) => {
+          if (response.status === 200) {
             debugger
+            // commit('SET_MESSAGE', response.data.status)
           } else {
             // handle error
           }
