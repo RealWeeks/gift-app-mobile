@@ -62,6 +62,7 @@ export default {
     token () {
       if (this.token) {
         this.$q.notify({message: 'Signed in', type: 'positive', position: 'top'})
+        this.$router.push('groupname')
       }
     }
   },

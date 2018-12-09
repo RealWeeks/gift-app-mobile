@@ -10,7 +10,8 @@
       <div class="btn-container column justify-between">
         <q-btn to="/" class="create-btn" rounded color="red" label="Back"/>
         <br/>
-        <q-btn to="invitefriends" class="create-btn" rounded color="secondary" label="Next"/>
+        <!-- <q-btn to="invitefriends" class="create-btn" rounded color="secondary" label="Next"/> -->
+        <q-btn @click="handleCreateGroup" class="create-btn" rounded color="secondary" label="Next"/>
         <br/>
       </div>
     </div>
@@ -37,6 +38,9 @@
 export default {
   name: 'groupname',
   methods: {
+    handleCreateGroup () {
+      this.$store.dispatch('CREATE_GROUP')
+    }
   },
   data () {
     return {

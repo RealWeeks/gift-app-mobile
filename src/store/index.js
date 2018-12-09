@@ -60,6 +60,23 @@ const store = new Vuex.Store({
           debugger
           console.log(err)
         })
+    },
+    CREATE_GROUP ({ commit }, data) {
+      debugger
+      axios.get(`http://localhost:3000/user/profile`, {headers: {
+        'Authorization': `bearer ${this.state.token}`
+      }})
+        .then((response) => {
+          if (response.status === 200) {
+            debugger
+          } else {
+            // handle error
+          }
+        })
+        .catch((err) => {
+          debugger
+          console.log(err)
+        })
     }
   }
 })
