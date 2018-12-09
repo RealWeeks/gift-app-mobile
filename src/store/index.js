@@ -67,7 +67,7 @@ const store = new Vuex.Store({
       }})
         .then((response) => {
           if (response.status === 200) {
-            debugger
+            commit('SET_MESSAGE', response.data.status)
           } else {
             // handle error
           }

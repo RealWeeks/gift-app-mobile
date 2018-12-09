@@ -40,6 +40,13 @@ export default {
   methods: {
     handleCreateGroup () {
       this.$store.dispatch('CREATE_GROUP', {groupname: this.groupName})
+        .then(() => {
+          this.$q.notify({message: 'Signed in', type: 'positive', position: 'top'})
+          this.$router.push('groupsplash')
+        })
+        .catch(() => {
+          this.$q.notify({message: 'Error', type: 'negative', position: 'top'})
+        })
     }
   },
   data () {
