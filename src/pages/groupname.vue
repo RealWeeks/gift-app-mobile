@@ -39,7 +39,7 @@ export default {
   name: 'groupname',
   methods: {
     handleCreateGroup () {
-      this.$store.dispatch('CREATE_GROUP')
+      this.$store.dispatch('CREATE_GROUP', {groupname: this.groupName})
     }
   },
   data () {
