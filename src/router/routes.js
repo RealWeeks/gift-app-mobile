@@ -8,7 +8,8 @@ const routes = [
       { path: 'groupname', component: () => import('pages/groupname.vue') },
       { path: 'invitefriends', component: () => import('pages/invitefriends.vue') },
       { path: 'signup', component: () => import('pages/signup.vue') },
-      { path: 'groupsplash', component: () => import('pages/groupsplash.vue') }
+      { path: 'groupsplash', component: () => import('pages/groupsplash.vue') },
+      { path: 'calendar', component: () => import('pages/calendar.vue') }
     ]
   }
 ]

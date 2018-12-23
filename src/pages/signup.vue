@@ -8,8 +8,11 @@
         <q-input v-model="email" float-label="Email address" placeholder="katie@gmail.com"/>
         <q-input v-model="password" type="password" float-label="Password"/>
       </div>
-      <div class="btn-container column justify-between">
-        <q-btn @click="handleSignUp" class rounded color="secondary" label="Sign up"/>
+      <div class="btn-container column justify-center items-center">
+        <div class="row">
+          <q-btn @click="handleSignUp" class rounded color="secondary" label="Sign up"/>
+          <q-btn @click="handleSignIn" class rounded color="secondary" label="Sign in"/>
+        </div>
         <br>
         <q-btn to="/" class rounded color="red" label="Home"/>
       </div>
@@ -34,6 +37,7 @@
 </style>
 
 <script>
+import { LocalStorage } from 'quasar'
 export default {
   name: 'signup',
   methods: {
@@ -41,6 +45,14 @@ export default {
       if (this.email.length && this.password.length) {
         let data = { email: this.email, password: this.password }
         this.$store.dispatch('SIGN_UP', data)
+      } else {
+        this.$q.notify({message: 'Please complete email and password', type: 'negative', position: 'top'})
+      }
+    },
+    handleSignIn () {
+      if (this.email.length && this.password.length) {
+        let data = { email: this.email, password: this.password }
+        this.$store.dispatch('SIGN_IN', data)
       } else {
         this.$q.notify({message: 'Please complete email and password', type: 'negative', position: 'top'})
       }
@@ -61,6 +73,8 @@ export default {
     },
     token () {
       if (this.token) {
+        LocalStorage.set('token', this.token)
+        LocalStorage.set('email', this.useremail)
         this.$q.notify({message: 'Signed in', type: 'positive', position: 'top'})
         this.$router.push('groupname')
       }

@@ -1,8 +1,6 @@
 # Gift App Mobile
 
-A back end interface for viewing and editing a mobile gift app.
-
-Data pulled from [gift-back](https://github.com/RealWeeks/gift-back).
+A back end interface for viewing and editing a mobile calendar app.
 
 ## Getting Started
 
@@ -47,5 +45,3 @@ PRs completely welcome.
 This project is licensed under the GNU General Public License v3.0 - see the [LICENSE](LICENSE) file for details
 
 ## Acknowledgments
-
-* Alex Korth for UX/UI

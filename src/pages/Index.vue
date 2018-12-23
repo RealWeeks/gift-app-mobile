@@ -4,14 +4,16 @@
       <div class="text-wrapper welcome-banner justify-center content-center items-center">
         <p class="text-weight-bolder header-text self-cent">Welcome to</p>
         <br/>
-        <p class="text-weight-bolder header-text self-center">Gift App</p>
+        <p class="text-weight-bolder header-text self-center">Cal App</p>
       </div>
-      <div class="text-wrapper items-center justify-between column text-weight-medium">
+      <!-- <div class="text-wrapper items-center justify-between column text-weight-medium">
         <p>Create or Join a party</p>
         <p>Make your list</p>
-      </div>
+      </div> -->
       <div class="items-center justify-between column">
-        <q-btn to="signup" rounded label="sign up" color="secondary"/>
+        <div class="items-center justify-between row">
+          <q-btn to="signup" rounded label="sign up / Sign in" color="secondary"/>
+        </div>
         <br/>
         <q-btn to="groupname" class="create-btn" rounded color="red" label="Create Group" icon-right="create"/>
         <br/>
@@ -23,7 +25,7 @@
 
 <style scoped>
 .welcome-wrapper{
-  margin-top: 20%;
+  margin-top: 10%;
 }
 .welcome-banner{
   margin-bottom: 25%;

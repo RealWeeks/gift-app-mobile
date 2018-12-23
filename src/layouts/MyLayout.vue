@@ -1,6 +1,6 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <!-- <q-layout-header>
+    <q-layout-header v-if="token">
       <q-toolbar
         color="red"
         :glossy="$q.theme === 'mat'"
@@ -17,13 +17,13 @@
         </q-btn>
 
         <q-toolbar-title>
-          Gift App
+          Chore Calendar
           <div slot="subtitle">Running on Quasar v{{ $q.version }}</div>
         </q-toolbar-title>
       </q-toolbar>
-    </q-layout-header> -->
+    </q-layout-header>
 
-    <!-- <q-layout-drawer
+    <q-layout-drawer
       v-model="leftDrawerOpen"
       :content-class="$q.theme === 'mat' ? 'bg-grey-2' : null"
     >
@@ -33,9 +33,9 @@
         inset-delimiter
       >
         <q-list-header>Essential Links</q-list-header>
-        <q-item @click.native="openURL('http://quasar-framework.org')">
+        <q-item @click.native="handleCalView">
           <q-item-side icon="school" />
-          <q-item-main label="Docs" sublabel="quasar-framework.org" />
+          <q-item-main label="Calendar" sublabel="View main cal" />
         </q-item>
         <q-item @click.native="openURL('https://github.com/quasarframework/')">
           <q-item-side icon="code" />
@@ -54,7 +54,7 @@
           <q-item-main label="Twitter" sublabel="@quasarframework" />
         </q-item>
       </q-list>
-    </q-layout-drawer> -->
+    </q-layout-drawer>
 
     <q-page-container>
       <router-view />
@@ -64,7 +64,6 @@
 
 <script>
 import { openURL } from 'quasar'
-
 export default {
   name: 'MyLayout',
   data () {
@@ -73,7 +72,36 @@ export default {
     }
   },
   methods: {
-    openURL
+    openURL,
+    handleCalView () {
+      this.$router.push('calendar')
+    }
+  },
+  computed: {
+    email () {
+      let value = false
+      if (this.$q.localStorage.get.item('email')) {
+        value = this.$q.localStorage.get.item('email')
+        this.$store.commit('SET_EMAIL', value)
+      }
+      return this.$store.state.email
+    },
+    token () {
+      let value = false
+      if (this.$q.localStorage.get.item('token')) {
+        value = this.$q.localStorage.get.item('token')
+        this.$store.commit('SET_TOKEN', value)
+      }
+      return this.$store.state.token || value
+    }
+  },
+  watch: {
+    // token () {
+    //   if (this.token) {
+    //     this.$q.notify({message: 'Signed in', type: 'positive', position: 'top'})
+    //     this.$router.push('groupname')
+    //   }
+    // }
   }
 }
 </script>
