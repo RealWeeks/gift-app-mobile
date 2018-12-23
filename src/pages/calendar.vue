@@ -1,7 +1,6 @@
 <template>
   <q-page class="flex flex-start justify-center">
     <div>
-      test
       <Calendar />
       <q-btn to="/" class="create-btn" rounded color="red" label="Back"/>
     </div>

@@ -69,6 +69,7 @@ module.exports = function (ctx) {
       // Quasar plugins
       plugins: [
         'Notify',
+        'QDatetimePicker',
         'LocalStorage',
         'SessionStorage'
       ]

@@ -9,7 +9,8 @@ const routes = [
       { path: 'invitefriends', component: () => import('pages/invitefriends.vue') },
       { path: 'signup', component: () => import('pages/signup.vue') },
       { path: 'groupsplash', component: () => import('pages/groupsplash.vue') },
-      { path: 'calendar', component: () => import('pages/calendar.vue') }
+      { path: 'calendar', component: () => import('pages/calendar.vue') },
+      { path: 'addevent', component: () => import('pages/addevent.vue') }
     ]
   }
 ]

@@ -2,7 +2,7 @@
   <q-layout view="lHh Lpr lFf">
     <q-layout-header v-if="token">
       <q-toolbar
-        color="red"
+        color="blue"
         :glossy="$q.theme === 'mat'"
         :inverted="$q.theme === 'ios'"
       >
@@ -37,9 +37,9 @@
           <q-item-side icon="school" />
           <q-item-main label="Calendar" sublabel="View main cal" />
         </q-item>
-        <q-item @click.native="openURL('https://github.com/quasarframework/')">
+        <q-item @click.native="handleEventView">
           <q-item-side icon="code" />
-          <q-item-main label="GitHub" sublabel="github.com/quasarframework" />
+          <q-item-main label="Add event" sublabel="add an event" />
         </q-item>
         <q-item @click.native="openURL('https://discord.gg/5TDhbDg')">
           <q-item-side icon="chat" />
@@ -75,6 +75,9 @@ export default {
     openURL,
     handleCalView () {
       this.$router.push('calendar')
+    },
+    handleEventView () {
+      this.$router.push('addevent')
     }
   },
   computed: {
